@@ -25,6 +25,11 @@ public class GameData
     
     //Journal
     public List<string> journalEntry;
+    
+    //Reminders
+    public List<string> reminderTexts;
+    public List<DateTime> reminderDates;
+    public List<string> reminderDatesString;
 
     public GameData()
     {
@@ -38,5 +43,9 @@ public class GameData
         dateString = new List<string>();
 
         journalEntry = new List<string>();
+
+        reminderTexts = new List<string>();
+        reminderDates = new List<DateTime>();
+        reminderDatesString = new List<string>();
     }
 }
