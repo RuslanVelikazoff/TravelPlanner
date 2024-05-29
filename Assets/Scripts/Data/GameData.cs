@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -14,10 +15,23 @@ public class GameData
     //Notes
     public List<string> textNotes;
     public List<Category> categoryNotes;
+    
+    //Travel
+    public List<string> city;
+    public List<string> places;
+    public List<int> budget;
+    public List<DateTime> date;
+    public List<string> dateString;
 
     public GameData()
     {
         textNotes = new List<string>();
         categoryNotes = new List<Category>();
+
+        city = new List<string>();
+        places = new List<string>();
+        budget = new List<int>();
+        date = new List<DateTime>();
+        dateString = new List<string>();
     }
 }
