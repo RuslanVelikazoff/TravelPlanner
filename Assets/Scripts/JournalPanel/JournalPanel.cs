@@ -1,18 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JournalPanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] 
+    private TMP_InputField journalEntryInputField;
+    
+    [SerializeField]
+    private Button createNewJournalEntryButton;
+    
+    [SerializeField] 
+    private JournalScrollView scrollView;
+
+    private string journalEntryString;
+
+    private void OnEnable()
     {
+        scrollView.ResetJournalEntry();
+        scrollView.SpawnPrefabs();
         
+        ButtonClickAction();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ButtonClickAction()
     {
-        
+        if (createNewJournalEntryButton != null)
+        {
+            createNewJournalEntryButton.onClick.RemoveAllListeners();
+            createNewJournalEntryButton.onClick.AddListener(() =>
+            {
+                WriteJournalEntryToData();
+            });
+        }
+    }
+
+    private void WriteJournalEntryToData()
+    {
+        if (journalEntryInputField.text != string.Empty)
+        {
+            journalEntryString = journalEntryInputField.text;
+            JournalData.Instance.CreateJournalEntry(journalEntryString);
+            
+            journalEntryString = string.Empty;
+            journalEntryInputField.text = journalEntryString;
+            
+            scrollView.ResetJournalEntry();
+            scrollView.SpawnPrefabs();
+        }
     }
 }

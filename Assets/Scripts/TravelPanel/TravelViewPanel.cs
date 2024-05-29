@@ -50,9 +50,9 @@ public class TravelViewPanel : MonoBehaviour
             deleteButton.onClick.RemoveAllListeners();
             deleteButton.onClick.AddListener(() =>
             {
+                TravelData.Instance.DeleteTravel(travelIndex);
                 this.gameObject.SetActive(false);
                 travelPanel.SetActive(true);
-                TravelData.Instance.DeleteTravel(travelIndex);
             });
         }
     }

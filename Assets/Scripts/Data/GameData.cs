@@ -22,6 +22,9 @@ public class GameData
     public List<int> budget;
     public List<DateTime> date;
     public List<string> dateString;
+    
+    //Journal
+    public List<string> journalEntry;
 
     public GameData()
     {
@@ -33,5 +36,7 @@ public class GameData
         budget = new List<int>();
         date = new List<DateTime>();
         dateString = new List<string>();
+
+        journalEntry = new List<string>();
     }
 }

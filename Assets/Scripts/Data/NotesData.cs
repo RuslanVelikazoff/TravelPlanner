@@ -7,8 +7,8 @@ public class NotesData : MonoBehaviour
 
     private const string SaveKey = "MainSaveNotes";
 
-    public List<string> _textNotes;
-    public List<GameData.Category> _categoryNotes;
+    private List<string> _textNotes;
+    private List<GameData.Category> _categoryNotes;
 
     private void Awake()
     {

@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class NotesScrollView : MonoBehaviour
 {
-    [SerializeField] private GameObject notesPrefab;
+    [SerializeField]
+    private GameObject notesPrefab;
 
-    [SerializeField] private Canvas canvas;
+    [SerializeField] 
+    private Canvas canvas;
 
     private List<GameObject> notes = new List<GameObject>();
     private List<int> notesIndex;

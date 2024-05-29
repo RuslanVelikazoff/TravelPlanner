@@ -132,9 +132,20 @@ public class NewTravelPanel : MonoBehaviour
 
     private void ResetAllInputFields()
     {
-        for (int i = 0; i < allInputFields.Length; i++)
-        {
-            allInputFields[i].text = string.Empty;
-        }
+        cityString = string.Empty;
+        cityInputField.text = cityString;
+
+        placesString = string.Empty;
+        placesInputField.text = placesString;
+
+        budget = 0;
+        budgetInputField.text = string.Empty;
+
+        day = 0;
+        dayInputField.text = string.Empty;
+        month = 0;
+        monthInputField.text = string.Empty;
+        year = 0;
+        yearInputField.text = string.Empty;
     }
 }
