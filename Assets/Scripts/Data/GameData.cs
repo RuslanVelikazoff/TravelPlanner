@@ -4,17 +4,26 @@ using System.Collections.Generic;
 [System.Serializable]
 public class GameData
 {
-    public enum Category
+    public enum NotesCategory
     {
         Null,
         Shopping,
         Travel,
         Education
     }
-    
+
+    public enum ShoppingCategory
+    {
+        Null,
+        Clothes,
+        Cosmetics,
+        Groceries,
+        Electronics
+    }
+
     //Notes
     public List<string> textNotes;
-    public List<Category> categoryNotes;
+    public List<NotesCategory> categoryNotes;
     
     //Travel
     public List<string> city;
@@ -30,11 +39,16 @@ public class GameData
     public List<string> reminderTexts;
     public List<DateTime> reminderDates;
     public List<string> reminderDatesString;
+    
+    //Shopping
+    public List<ShoppingCategory> categoryShopping;
+    public List<string> purchaseName;
+    public List<bool> completedPurchase;
 
     public GameData()
     {
         textNotes = new List<string>();
-        categoryNotes = new List<Category>();
+        categoryNotes = new List<NotesCategory>();
 
         city = new List<string>();
         places = new List<string>();
@@ -47,5 +61,9 @@ public class GameData
         reminderTexts = new List<string>();
         reminderDates = new List<DateTime>();
         reminderDatesString = new List<string>();
+
+        categoryShopping = new List<ShoppingCategory>();
+        purchaseName = new List<string>();
+        completedPurchase = new List<bool>();
     }
 }

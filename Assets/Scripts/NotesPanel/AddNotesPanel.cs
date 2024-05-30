@@ -39,12 +39,12 @@ public class AddNotesPanel : MonoBehaviour
     [SerializeField] 
     private TMP_InputField notesInputField;
 
-    private GameData.Category selectedCategory;
+    private GameData.NotesCategory _selectedNotesCategory;
 
     private void OnEnable()
     {
         notesInputField.text = String.Empty;
-        selectedCategory = GameData.Category.Null;
+        _selectedNotesCategory = GameData.NotesCategory.Null;
         SetCategoryButtonSprites();
         ButtonClickAction();
     }
@@ -69,7 +69,7 @@ public class AddNotesPanel : MonoBehaviour
             shoppingButton.onClick.RemoveAllListeners();
             shoppingButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Shopping;
+                _selectedNotesCategory = GameData.NotesCategory.Shopping;
                 SetCategoryButtonSprites();
             });
         }
@@ -79,7 +79,7 @@ public class AddNotesPanel : MonoBehaviour
             educationButton.onClick.RemoveAllListeners();
             educationButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Education;
+                _selectedNotesCategory = GameData.NotesCategory.Education;
                 SetCategoryButtonSprites();
             });
         }
@@ -89,7 +89,7 @@ public class AddNotesPanel : MonoBehaviour
             travelButton.onClick.RemoveAllListeners();
             travelButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Travel;
+                _selectedNotesCategory = GameData.NotesCategory.Travel;
                 SetCategoryButtonSprites();
             });
         }
@@ -97,9 +97,9 @@ public class AddNotesPanel : MonoBehaviour
 
     private bool CreateNewNotes()
     {
-        if (notesInputField.text != string.Empty && selectedCategory != GameData.Category.Null)
+        if (notesInputField.text != string.Empty && _selectedNotesCategory != GameData.NotesCategory.Null)
         {
-            NotesData.Instance.CreateNewNote(notesInputField.text, selectedCategory);
+            NotesData.Instance.CreateNewNote(notesInputField.text, _selectedNotesCategory);
             return true;
         }
         else
@@ -110,24 +110,24 @@ public class AddNotesPanel : MonoBehaviour
     
     private void SetCategoryButtonSprites()
     {
-        switch (selectedCategory)
+        switch (_selectedNotesCategory)
         {
-            case GameData.Category.Null:
+            case GameData.NotesCategory.Null:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Shopping:
+            case GameData.NotesCategory.Shopping:
                 shoppingButton.GetComponent<Image>().sprite = shoppingActiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Education:
+            case GameData.NotesCategory.Education:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationActiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Travel:
+            case GameData.NotesCategory.Travel:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelActiveSprite;

@@ -8,7 +8,7 @@ public class NotesData : MonoBehaviour
     private const string SaveKey = "MainSaveNotes";
 
     private List<string> _textNotes;
-    private List<GameData.Category> _categoryNotes;
+    private List<GameData.NotesCategory> _categoryNotes;
 
     private void Awake()
     {
@@ -67,10 +67,10 @@ public class NotesData : MonoBehaviour
         return data;
     }
 
-    public void CreateNewNote(string notesText, GameData.Category notesCategory)
+    public void CreateNewNote(string notesText, GameData.NotesCategory notesNotesCategory)
     {
         _textNotes.Add(notesText);
-        _categoryNotes.Add(notesCategory);
+        _categoryNotes.Add(notesNotesCategory);
         Save();
     }
 
@@ -79,13 +79,13 @@ public class NotesData : MonoBehaviour
         return _textNotes[index];
     }
 
-    public List<int> GetCategoryListIndex(GameData.Category category)
+    public List<int> GetCategoryListIndex(GameData.NotesCategory notesCategory)
     {
         List<int> listIndex = new List<int>();
 
         for (int i = 0; i < _categoryNotes.Count; i++)
         {
-            if (_categoryNotes[i] == category)
+            if (_categoryNotes[i] == notesCategory)
             {
                 listIndex.Add(i);
             }

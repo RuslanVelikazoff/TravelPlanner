@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class NotesPanel : MonoBehaviour
 {
-    private GameData.Category selectedCategory;
+    private GameData.NotesCategory _selectedNotesCategory;
 
     [SerializeField] 
     private Button addNotesButton;
@@ -41,11 +41,11 @@ public class NotesPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        selectedCategory = GameData.Category.Null;
+        _selectedNotesCategory = GameData.NotesCategory.Null;
         scrollView.ResetNotes();
-        scrollView.SpawnPrefabs(GameData.Category.Shopping);
-        scrollView.SpawnPrefabs(GameData.Category.Education);
-        scrollView.SpawnPrefabs(GameData.Category.Travel);
+        scrollView.SpawnPrefabs(GameData.NotesCategory.Shopping);
+        scrollView.SpawnPrefabs(GameData.NotesCategory.Education);
+        scrollView.SpawnPrefabs(GameData.NotesCategory.Travel);
         SetCategoryButtonSprites();
         ButtonClickAction();
     }
@@ -67,9 +67,9 @@ public class NotesPanel : MonoBehaviour
             shoppingButton.onClick.RemoveAllListeners();
             shoppingButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Shopping;
+                _selectedNotesCategory = GameData.NotesCategory.Shopping;
                 scrollView.ResetNotes();
-                scrollView.SpawnPrefabs(GameData.Category.Shopping);
+                scrollView.SpawnPrefabs(GameData.NotesCategory.Shopping);
                 SetCategoryButtonSprites();
             });
         }
@@ -79,9 +79,9 @@ public class NotesPanel : MonoBehaviour
             educationButton.onClick.RemoveAllListeners();
             educationButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Education;
+                _selectedNotesCategory = GameData.NotesCategory.Education;
                 scrollView.ResetNotes();
-                scrollView.SpawnPrefabs(GameData.Category.Education);
+                scrollView.SpawnPrefabs(GameData.NotesCategory.Education);
                 SetCategoryButtonSprites();
             });
         }
@@ -91,9 +91,9 @@ public class NotesPanel : MonoBehaviour
             travelButton.onClick.RemoveAllListeners();
             travelButton.onClick.AddListener(() =>
             {
-                selectedCategory = GameData.Category.Travel;
+                _selectedNotesCategory = GameData.NotesCategory.Travel;
                 scrollView.ResetNotes();
-                scrollView.SpawnPrefabs(GameData.Category.Travel);
+                scrollView.SpawnPrefabs(GameData.NotesCategory.Travel);
                 SetCategoryButtonSprites();
             });
         }
@@ -101,24 +101,24 @@ public class NotesPanel : MonoBehaviour
 
     private void SetCategoryButtonSprites()
     {
-        switch (selectedCategory)
+        switch (_selectedNotesCategory)
         {
-            case GameData.Category.Null:
+            case GameData.NotesCategory.Null:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Shopping:
+            case GameData.NotesCategory.Shopping:
                 shoppingButton.GetComponent<Image>().sprite = shoppingActiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Education:
+            case GameData.NotesCategory.Education:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationActiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelInactiveSprite;
                 break;
-            case GameData.Category.Travel:
+            case GameData.NotesCategory.Travel:
                 shoppingButton.GetComponent<Image>().sprite = shoppingInactiveSprite;
                 educationButton.GetComponent<Image>().sprite = educationInactiveSprite;
                 travelButton.GetComponent<Image>().sprite = travelActiveSprite;

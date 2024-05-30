@@ -12,9 +12,9 @@ public class NotesScrollView : MonoBehaviour
     private List<GameObject> notes = new List<GameObject>();
     private List<int> notesIndex;
 
-    public void SpawnPrefabs(GameData.Category category)
+    public void SpawnPrefabs(GameData.NotesCategory notesCategory)
     {
-        notesIndex = NotesData.Instance.GetCategoryListIndex(category);
+        notesIndex = NotesData.Instance.GetCategoryListIndex(notesCategory);
 
         for (int i = 0; i < notesIndex.Count; i++)
         {
