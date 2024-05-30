@@ -122,6 +122,11 @@ public class RemindersData : MonoBehaviour
         return _reminderTexts[index];
     }
 
+    public DateTime GetReminderDate(int index)
+    {
+        return _reminderDates[index];
+    }
+
     #endregion
 
     #region SetMethods
