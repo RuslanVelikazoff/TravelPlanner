@@ -5,6 +5,9 @@ public class PhotoPrefab : MonoBehaviour
 {
     [SerializeField]
     private Image photoImage;
+    
+    [SerializeField] 
+    private Button photoButton;
 
     private Texture2D photoTexture;
     private GameData.PhotoCategory category;
@@ -17,6 +20,16 @@ public class PhotoPrefab : MonoBehaviour
             new Vector2(photoTexture.width / 2, photoTexture.height / 2));
 
         photoImage.sprite = sprite;
+
+        if (photoButton != null)
+        {
+            photoButton.onClick.RemoveAllListeners();
+            photoButton.onClick.AddListener(() =>
+            {
+                Debug.Log("Button");
+                PhotoViewPanel.Instance.OpenPanel(sprite, this.gameObject);
+            });
+        }
     }
 
     private void SetTexture(int index)

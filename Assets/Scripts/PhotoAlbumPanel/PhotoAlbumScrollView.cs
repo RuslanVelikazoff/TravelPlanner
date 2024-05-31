@@ -29,8 +29,6 @@ public class PhotoAlbumScrollView : MonoBehaviour
             photo.GetComponent<PhotoPrefab>().SpawnPrefab(photoIndex[i], category);
             photos.Add(photo);
         }
-        
-        Debug.Log(photoIndex.Count);
     }
 
     public void ResetPhotos()
