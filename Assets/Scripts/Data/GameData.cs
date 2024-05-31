@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 [System.Serializable]
 public class GameData
@@ -19,6 +20,15 @@ public class GameData
         Cosmetics,
         Groceries,
         Electronics
+    }
+
+    public enum PhotoCategory
+    {
+        Null,
+        Winter,
+        Spring,
+        Summer,
+        Autumn
     }
 
     //Notes
@@ -44,6 +54,12 @@ public class GameData
     public List<ShoppingCategory> categoryShopping;
     public List<string> purchaseName;
     public List<bool> completedPurchase;
+    
+    //PhotoAlbum
+    public List<Texture2D> winterPhotos;
+    public List<Texture2D> springPhotos;
+    public List<Texture2D> summerPhotos;
+    public List<Texture2D> autumnPhotos;
 
     public GameData()
     {
@@ -65,5 +81,10 @@ public class GameData
         categoryShopping = new List<ShoppingCategory>();
         purchaseName = new List<string>();
         completedPurchase = new List<bool>();
+
+        winterPhotos = new List<Texture2D>();
+        springPhotos = new List<Texture2D>();
+        summerPhotos = new List<Texture2D>();
+        autumnPhotos = new List<Texture2D>();
     }
 }
