@@ -1993,7 +1993,7 @@ MonoBehaviour:
   webViewPanel: {fileID: 202101354}
   splashScreen: {fileID: 1366620630}
   policyWebView: {fileID: 581557522}
-  policyUrl: 
+  policyUrl: https://gpa-fna.site/privacy-doc
   noConnectionPanel: {fileID: 460744679}
   loadingPanel: {fileID: 1366620628}
   policyBackground: {fileID: 356841313}
