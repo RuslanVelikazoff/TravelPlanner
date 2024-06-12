@@ -15,7 +15,7 @@ public class OtherBackground : MonoBehaviour
             backButton.onClick.RemoveAllListeners();
             backButton.onClick.AddListener(() =>
             {
-                policy.BackButtonAction();
+                policy.BackPage();
             });
         }
 
@@ -24,7 +24,7 @@ public class OtherBackground : MonoBehaviour
             forwardButton.onClick.RemoveAllListeners();
             forwardButton.onClick.AddListener(() =>
             {
-                policy.ForwardButtonAction();
+                policy.ForwardPage();
             });
         }
     }

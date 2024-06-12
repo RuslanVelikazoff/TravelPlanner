@@ -272,7 +272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.087000005}
-  m_AnchoredPosition: {x: -0.0025634766, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.0025634766, y: 0.00048828125}
   m_SizeDelta: {x: 0.0050049, y: -0.000091553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356841315
@@ -975,7 +975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.087000005}
-  m_AnchoredPosition: {x: -0.0025634766, y: 0.000061035156}
+  m_AnchoredPosition: {x: -0.0025634766, y: 0.00048828125}
   m_SizeDelta: {x: 0.0050049, y: -0.000091553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &875619238
@@ -1814,7 +1814,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb3871cfc9947d49a1b141b1cd5d470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  load: 0
   loadImage: {fileID: 762044178}
 --- !u!114 &1366620631
 MonoBehaviour:
@@ -1990,12 +1989,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92837662fdc86b548b0b99ea3769a97c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  webViewPanel: {fileID: 202101354}
-  splashScreen: {fileID: 1366620630}
-  policyWebView: {fileID: 581557522}
-  policyUrl: https://gpa-fna.site/privacy-doc
+  loader: {fileID: 1366620630}
+  webViewForPolicy: {fileID: 581557522}
+  policyLink: https://gpa-fna.site/privacy-doc
   noConnectionPanel: {fileID: 460744679}
   loadingPanel: {fileID: 1366620628}
+  webViewPanel: {fileID: 202101354}
   policyBackground: {fileID: 356841313}
   otherBackground: {fileID: 863596208}
 --- !u!4 &1581594727

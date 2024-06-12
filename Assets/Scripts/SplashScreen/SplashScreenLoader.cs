@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class SplashScreenLoader : MonoBehaviour
 {
-    public bool load = false;
+    private bool load = false;
 
     [SerializeField]
     private Image loadImage;
@@ -17,8 +17,14 @@ public class SplashScreenLoader : MonoBehaviour
             
             if (loadImage.fillAmount >= 1f)
             {
+                Screen.orientation = ScreenOrientation.Portrait;
                 SceneManager.LoadScene("MainScene");
             }
         }
+    }
+
+    public void StartLoad()
+    {
+        load = true;
     }
 }
